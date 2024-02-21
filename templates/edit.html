@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block title %}Edit A Book Rating{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+
+                <h1>Update books rating</h1>
+
+                <b><p>Selected Book: {{ book.title }}</p></b>
+                <b><p>Current Rating: {{ book.rating }}</p></b>
+
+                {{ render_form(edit_form, novalidate=True) }}
+
+                <p class="space-above"><a href="{{ url_for('home') }}">See all books</a></p>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
