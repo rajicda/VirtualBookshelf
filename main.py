@@ -1,19 +1,16 @@
-from datetime import date
-
 from flask import Flask, render_template, request, redirect, url_for
 from flask_bootstrap import Bootstrap5
+from flask_sqlalchemy import SQLAlchemy
 from flask_wtf import FlaskForm
+from sqlalchemy import Integer, String
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from wtforms import StringField, DateField
 from wtforms.fields.choices import SelectField
 from wtforms.fields.simple import SubmitField
-from wtforms import StringField, DateField, IntegerField
-from wtforms.validators import DataRequired, NumberRange
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
-from sqlalchemy import Integer, String
-from wtforms.widgets.core import DateInput
+from wtforms.validators import DataRequired
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = 'Anything'
 Bootstrap5(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///books-collection.db"
 
